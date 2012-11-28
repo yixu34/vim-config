@@ -4,16 +4,20 @@ filetype plugin indent on
 set hlsearch
 set incsearch
 set ic
-set nobackup
+set showmatch
+
 set nowrap
+
+set nobackup
+set nowritebackup
+set noswapfile
 
 set ai
 set nosi
 set noci
-set sw=4
-set ts=4
-set noet
-set softtabstop=4
+set tabstop=4
+let &shiftwidth = &tabstop
+let &softtabstop = &tabstop
 set et
 
 set textwidth=110
