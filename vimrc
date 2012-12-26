@@ -47,11 +47,18 @@ command! ToggleColorColumn call ToggleColorColumn()
 noremap <leader>l :ToggleColorColumn<cr>
 let &colorcolumn = &wrapmargin
 
-" Show extra whitespace
-hi ExtraWhitespace guibg=#CCCCCC
-hi ExtraWhitespace ctermbg=1
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" Show trailing whitespace
+hi TrailingWhitespace guibg=#CCCCCC
+hi TrailingWhitespace ctermbg=1
+match TrailingWhitespace /\s\+$/
+autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
+autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailingWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+function! StripTrailingWhitespace()
+    %s/\s\+$//
+endfunction
+command! StripTrailingWhitespace call StripTrailingWhitespace()
+noremap <leader>w :StripTrailingWhitespace<cr>
+
