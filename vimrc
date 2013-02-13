@@ -20,8 +20,7 @@ let &shiftwidth = &tabstop
 let &softtabstop = &tabstop
 set et
 
-set textwidth=110
-let &wrapmargin= &textwidth
+let &textwidth=110
 
 map <Space> <PageDown>
 map <Backspace> <PageUp>
@@ -36,8 +35,8 @@ hi ColorColumn     ctermbg=7
 " Toggle colorcolumn
 function! ToggleColorColumn()
     if &colorcolumn == 0
-        " Draw the color column wherever wrapmargin is set
-        let &colorcolumn = &wrapmargin
+        " Draw the color column wherever textwidth is set
+        let &colorcolumn = &textwidth
     else
         let &colorcolumn = 0
     endif
@@ -45,7 +44,7 @@ endfunction
 
 command! ToggleColorColumn call ToggleColorColumn()
 noremap <leader>l :ToggleColorColumn<cr>
-let &colorcolumn = &wrapmargin
+let &colorcolumn = &textwidth
 
 " Show trailing whitespace
 hi TrailingWhitespace guibg=#CCCCCC
