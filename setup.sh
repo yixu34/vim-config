@@ -6,6 +6,8 @@ for d in ftdetect indent syntax ; do
     wget --no-check-certificate -O ~/.vim/$d/scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim;
 
     wget --no-check-certificate -O ~/.vim/$d/coffee.vim https://raw.github.com/kchmck/vim-coffee-script/master/$d/coffee.vim;
+
+    wget --no-check-certificate -O ~/.vim/$d/nginx.vim https://raw.github.com/yixu34/nginx-vim-syntax/master/$d/nginx.vim;
 done
 
 for d in ftdetect syntax; do
