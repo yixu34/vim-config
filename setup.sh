@@ -12,6 +12,8 @@ done
 
 for d in ftdetect syntax; do
     wget --no-check-certificate -O ~/.vim/$d/actionscript.vim https://raw.github.com/jeroenbourgois/vim-actionscript/master/$d/actionscript.vim;
+
+    wget --no-check-certificate -O ~/.vim/$d/proto.vim https://raw.github.com/uarun/vim-protobuf/master/$d/proto.vim
 done
 
 cp indent/actionscript.vim ~/.vim/indent
