@@ -61,3 +61,9 @@ endfunction
 command! StripTrailingWhitespace call StripTrailingWhitespace()
 noremap <leader>w :StripTrailingWhitespace<cr>
 
+set path=.,**
+set wildmenu
+set wildignore+=*.class,*.pyc
+
+" This needs vim7.4 (or at least some high version of 7.3)
+set wildignorecase
