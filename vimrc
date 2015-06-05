@@ -67,3 +67,10 @@ set wildignore+=*.class,*.pyc
 
 " This needs vim7.4 (or at least some high version of 7.3)
 set wildignorecase
+
+" Backspace over whitespace intelligently
+set backspace=indent,eol,start
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
