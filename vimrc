@@ -20,7 +20,8 @@ let &shiftwidth = &tabstop
 let &softtabstop = &tabstop
 set et
 
-let &textwidth=110
+" Got tired of vim wrapping, but I still want the colorcolumn.
+"let &textwidth=110
 
 map <Space> <PageDown>
 map <Backspace> <PageUp>
@@ -36,7 +37,7 @@ hi ColorColumn     ctermbg=7
 function! ToggleColorColumn()
     if &colorcolumn == 0
         " Draw the color column wherever textwidth is set
-        let &colorcolumn = &textwidth
+        let &colorcolumn = 120 "&textwidth
     else
         let &colorcolumn = 0
     endif
@@ -44,7 +45,7 @@ endfunction
 
 command! ToggleColorColumn call ToggleColorColumn()
 noremap <leader>l :ToggleColorColumn<cr>
-let &colorcolumn = &textwidth
+let &colorcolumn = 120 "&textwidth
 
 " Show trailing whitespace
 hi TrailingWhitespace guibg=#CCCCCC
