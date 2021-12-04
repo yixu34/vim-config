@@ -75,3 +75,6 @@ set backspace=indent,eol,start
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+" Don't double indent for python
+let g:pyindent_open_paren=shiftwidth()
